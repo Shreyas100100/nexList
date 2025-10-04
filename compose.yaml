@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8090:8080"
+    env_file:
+      - .env
+    networks:
+      - nexlist-network
+
+networks:
+  nexlist-network:
+    driver: bridge
